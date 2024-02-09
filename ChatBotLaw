@@ -1,0 +1,27 @@
+import rasa
+
+intents = [
+    "informacion_derechos",
+    "despido",
+    "indemnizacion",
+    "cita",
+    "informacion",
+    "tramite"
+]
+
+entities = [
+    "tema",
+    "fecha",
+    "hora"
+]
+
+rasa.train(
+    data="data.json",
+    model="model",
+    endpoints="endpoints.yml"
+)
+
+rasa.run(
+    model="model",
+    endpoints="endpoints.yml"
+)
